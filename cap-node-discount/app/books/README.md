@@ -11,7 +11,7 @@
 |**Module Name**<br>books|
 |**Application Title**<br>Books|
 |**Namespace**<br>|
-|**UI5 Theme**<br>sap_fiori_3|
+|**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.102.1|
 |**Enable Code Assist Libraries**<br>False|
 |**Add Eslint configuration**<br>False|

@@ -4,18 +4,23 @@ annotate service.Books with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : 'ID',
+            Label : '{i18n>Id}',
             Value : ID,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'title',
+            Label : '{i18n>Title}',
             Value : title,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'stock',
+            Label : '{i18n>Stock}',
             Value : stock,
+        },
+        {
+            $Type : 'UI.DataFieldForAction',
+            Action : 'CatalogService.decreaseStock',
+            Label : '{i18n>DecreaseStock}',
         },
     ]
 );
@@ -25,17 +30,17 @@ annotate service.Books with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'ID',
+                Label : '{i18n>Id}',
                 Value : ID,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'title',
+                Label : '{i18n>Title}',
                 Value : title,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'stock',
+                Label : '{i18n>Stock}',
                 Value : stock,
             },
         ],
@@ -48,4 +53,19 @@ annotate service.Books with @(
             Target : '@UI.FieldGroup#GeneratedGroup1',
         },
     ]
+);
+annotate service.Books with actions {
+    @cds.odata.bindingparameter.name : '_it'
+    @Common.SideEffects : {TargetProperties : ['_it/stock', '_it/title']}
+    decreaseStock;
+};
+annotate service.Books with @(
+    UI.HeaderInfo : {
+        Title : {
+            $Type : 'UI.DataField',
+            Value : title,
+        },
+        TypeName : '',
+        TypeNamePlural : '',
+    }
 );
