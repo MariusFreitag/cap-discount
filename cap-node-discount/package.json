@@ -10,6 +10,7 @@
     "express": "^4"
   },
   "devDependencies": {
+    "@sap/ux-specification": "^1.102.6",
     "sqlite3": "^5.0.4"
   },
   "scripts": {
@@ -42,5 +43,8 @@
       "no-console": "off",
       "require-atomic-updates": "off"
     }
-  }
+  },
+  "sapux": [
+    "app/books"
+  ]
 }
